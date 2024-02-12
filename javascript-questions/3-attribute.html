@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change HTML Attribute Values</title>
+    <style>
+        .all{
+            text-align: center;
+        }
+        #bg{
+            width: 40%;
+            height: 100px;
+            border: 3px solid chartreuse;
+            margin: auto;
+            border-radius: 20px;
+            
+        }
+        button{
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 17px;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="all">
+        <button onclick="document.getElementById('bg').style.backgroundColor = 'black'">bg black</button>
+        <div id="bg"></div>
+        <button onclick="document.getElementById('bg').style.backgroundColor = 'blue'">bg blue</button>
+    </div>
+</body>
+</html>
