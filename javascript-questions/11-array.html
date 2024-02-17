@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+</body>
+<script>
+    const cars = ["a","b","c"]
+    document.getElementById('demo').innerHTML = cars[0] 
+    const person = {
+        firstName : "Aniket",
+        lastName : "Sonkusare",
+        age: 21,
+        fullName : function(params) {
+            return this.firstName + " " + this.lastName
+        },
+    }
+    document.getElementById('demo1').innerHTML = person.firstName + " and" + " last Name is " + person.lastName
+
+    document.getElementById('demo2').innerHTML = person["firstName"] + " and" + " last Name is " +
+    person["lastName"]
+
+    document.getElementById('demo3').innerHTML = person.fullName();
+</script>
+</html>
