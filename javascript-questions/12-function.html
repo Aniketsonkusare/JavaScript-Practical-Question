@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in JavaScript</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <button onclick="Myfunction('Aniket','Sonkusare')">Click me</button>
+
+    <p id="demo2"></p>
+    <form action="">
+        <button type="button" onclick="Myfunct('Good Morning')">Morning</button>
+        <button type="button" onclick="Myfunct('Good Afternoon')">Afternoon</button>
+    </form>
+
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+
+    <button onclick="this.innerHTML = Date()">The Time is</button>
+
+    <p id="demo5"></p>
+    <button onclick="display()">The Time is</button>
+</body>
+<script>
+    function Myfunction(name,surname) {
+        document.getElementById('demo').innerHTML = name + " " + surname
+    }
+
+    function Myfunct(txt) {
+        document.getElementById('demo2').innerHTML = txt
+    }
+
+    let x = Multi(4,3)
+    document.getElementById('demo3').innerHTML = x
+    function Multi(a,b) {
+        return a * b
+    }
+
+    let Value = toCelsius(77);
+    document.getElementById('demo4').innerHTML = Value;
+    function toCelsius(params) {
+        return (5/9) * (params - 32)
+    }
+
+    function display(params) {
+        document.getElementById('demo5').innerHTML = Date();
+    }
+
+     
+</script>
+</html>
