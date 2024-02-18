@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+
+    <button onclick="Replace()">Click</button>
+    <p id="demo4">Please Visit Microsoft</p>
+
+    <button onclick="Upp()">Uppercase</button>
+    <p id="demo5">hello world</p>
+    <br>
+    <p id="demo6"></p>
+</body>
+<script>
+    var z = 'It\'s alright';
+    var y = "We are the so-called \"Vikings\" from the north.";
+    document.getElementById("demo").innerHTML = z + "<br>" + y;
+
+    // length
+    let a = "abcdefghijklm"
+    document.getElementById('demo').innerHTML = a.length;
+
+    // break
+    document.getElementById("demo1").innerHTML = "Hello \
+    Aniket!";
+
+    // locate text
+    let text = "my name is aniket"
+    let value = text.indexOf("name")
+    document.getElementById('demo2').innerHTML = value
+
+    // match text
+    let str = "The rain in SPAIN stays mainly in the plain"
+    let n = str.match(/ain/g)
+    document.getElementById('demo3').innerHTML = n 
+
+    // replace text
+    function Replace(params) {
+        let text = document.getElementById('demo4').innerHTML;
+        document.getElementById('demo4').innerHTML = text.replace("Microsoft","W3school")
+    }
+
+    // uppercase
+    function Upp(params) {
+        let text = document.getElementById('demo5').innerHTML    
+        document.getElementById('demo5').innerHTML = text.toUpperCase()
+    }
+
+    // Split
+    let text1 = "a,b,c,d,e,f";
+    const myArray = text1.split(",");
+    document.getElementById("demo6").innerHTML = myArray[0];    
+</script>
+</html>
