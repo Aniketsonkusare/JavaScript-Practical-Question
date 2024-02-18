@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math method</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+
+
+    <p><input type="number" id="c" onkeyup="Convert('C')"></p>
+    <p><input type="number" id="f" onkeyup="Convert('F')"></p>
+
+</body>
+<script>
+    document.getElementById('demo').innerHTML = `PI Value ${Math.PI}`
+    document.getElementById('demo1').innerHTML = `Round of Value ${Math.round(3.14)}`
+    document.getElementById('demo2').innerHTML = `3 Power ${Math.pow(3,3)}`
+    document.getElementById('demo3').innerHTML = `Square root of 64 is ${Math.sqrt(64)}`
+    document.getElementById('demo4').innerHTML = `Absolute value ${Math.abs(-64)}`
+    document.getElementById('demo5').innerHTML = `Rounded up value ${Math.ceil(6.1)}`
+    document.getElementById('demo6').innerHTML = `Rounded Down value ${Math.floor(6.7)}`
+    document.getElementById('demo7').innerHTML = `The Sign value of 90 degree is  
+    ${Math.sin(90 * Math.PI / 180)}`
+    document.getElementById('demo8').innerHTML = `The cosine value of 0 degrees is ${Math.cos(0 * Math.PI / 180)}`
+    document.getElementById('demo9').innerHTML = `Maximum Value ${Math.max(-10,20,-30,100,20,200)}`
+    document.getElementById('demo10').innerHTML = `Minimum Value ${Math.min(-10,20,-30,100,20,200)}`
+
+    function Convert(degree) {
+        let x;
+        if (degree === 'C') {
+            x = document.getElementById('c').value * 9 / 5 + 32
+            document.getElementById('f').value = Math.round(x)
+        }
+        else{
+            x = (document.getElementById('f').value - 32) * 5/9;
+            document.getElementById('c').value = Math.round(x)
+        }
+    }
+
+</script>
+</html>
