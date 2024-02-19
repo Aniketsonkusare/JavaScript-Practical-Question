@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date</title>
+</head>
+<body onload="StartTime()">
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+
+    <h1 onload="StartTime()">Clock</h1>
+    <h1 id="demo7"></h1>
+
+</body>
+<script>
+    let d = new Date();
+    document.getElementById('demo').innerHTML = d
+    document.getElementById('demo1').innerHTML = d.getFullYear();
+    document.getElementById('demo2').innerHTML = d.getTime();
+
+    let e = new Date();
+    e.setFullYear(2020)
+    document.getElementById('demo3').innerHTML = e;
+
+    let f = new Date();
+    document.getElementById('demo4').innerHTML = f.toUTCString();
+    document.getElementById('demo5').innerHTML = f.getDay()
+
+    const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+    const g = new Date();
+    const day = days[g.getDay()]
+    document.getElementById('demo6').innerHTML = day
+
+    // clock
+
+    function StartTime() {
+        let today = new Date();
+        let h = today.getHours();
+        let m = today.getMinutes();
+        let s = today.getSeconds();
+
+        h = getTime(h)
+        m = getTime(m)
+        s = getTime(s)
+
+        document.getElementById('demo7').innerHTML = h + ":" + m + ":" + s
+        setTimeout(StartTime,1000)
+    }
+    
+    function getTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i
+    }
+
+</script>
+</html>
