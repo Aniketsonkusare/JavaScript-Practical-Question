@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Math.random()</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+
+    <button onclick="document.getElementById('demo6').innerHTML = getRandomInteger(0,10)">Click</button>
+
+    <p id="demo7"></p>
+    <button onclick="document.getElementById('demo7').innerHTML = getRandomInteger1t010(1,10)">Click</button>
+</body>
+<script>
+    document.getElementById('demo').innerHTML = `random number ${Math.random()}`
+    document.getElementById('demo1').innerHTML = `random number 
+    ${Math.floor(Math.random() * 10)}`
+    document.getElementById('demo2').innerHTML = `random number 
+    ${Math.floor(Math.random() * 11)}`
+    document.getElementById('demo3').innerHTML = `random number 
+    ${Math.floor(Math.random() * 100)}`
+    document.getElementById('demo4').innerHTML = `random number 
+    ${Math.floor(Math.random() * 10) + 1}`
+    document.getElementById('demo5').innerHTML = `random number 
+    ${Math.floor(Math.random() * 100) + 1}`
+    
+
+    function getRandomInteger(min,max) {
+        return Math.floor(Math.random() * (max - min)) + min
+    }
+
+    function getRandomInteger1t010(min,max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min
+    }
+    
+</script>
+</html>
