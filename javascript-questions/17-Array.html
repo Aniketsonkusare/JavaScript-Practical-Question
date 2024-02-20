@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <button onclick="myFunc()">Add</button>
+
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+</body>
+<script>
+    const cars = ["abc", "def", "ghi"];
+    document.getElementById("demo").innerHTML = cars;
+    document.getElementById("demo2").innerHTML = cars[0]
+
+    let a = ["oranger","apple"]
+    document.getElementById('demo3').innerHTML = a;
+    a[0] = "kiwi"
+    document.getElementById('demo3').innerHTML = a;
+
+    let b = a.length;
+    document.getElementById('demo4').innerHTML = b
+
+    // looping array
+
+    const fruits = ["apple","orange","kiwi","banana"]
+    const len = fruits.length;
+    
+    let text = "<ul>"
+    for(i = 0; i < len; i++){
+        text += "<li style='list-style-type: none'>" + fruits[i] + "</li>"
+    }
+    text += "</ul>"
+    document.getElementById('demo5').innerHTML = text
+
+    // add Element
+    const fruits1 = ["apple","orange","banana","kiwi"]
+    document.getElementById('demo6').innerHTML = fruits1
+
+    function myFunc() {
+        fruits1[4] = "lemon"
+        document.getElementById('demo6').innerHTML = fruits1
+    }
+
+    // undefined
+    const fruits2 = ["apple","banana"]
+    fruits2[5] = "lemon"
+
+    let text1 = ""
+    for(i = 0; i < fruits2.length; i++){
+        text1 += fruits2[i] + "<br>"
+    }
+
+    document.getElementById('demo7').innerHTML = text1
+
+    document.getElementById('demo8').innerHTML = fruits2 instanceof Array
+    document.getElementById('demo9').innerHTML = Array.isArray(fruits2)
+</script>
+</html>
