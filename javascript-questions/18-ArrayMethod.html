@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array method</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    <p id="demo7"></p>
+    <p id="demo8"></p>
+    <p id="demo9"></p>
+    <p id="demo10"></p>
+    <p id="demo11"></p>
+    <p id="demo12"></p>
+    <p id="demo13"></p>
+    <p id="demo14"></p>
+</body>
+<script>
+    // push
+    let a = ["apple","banana"]
+    document.getElementById('demo').innerHTML = a
+    a.push('kiwi')
+    document.getElementById('demo1').innerHTML = a
+
+    // pop
+    let b = ["apple","banana"]
+    document.getElementById('demo2').innerHTML = b;
+    b.pop();
+    document.getElementById('demo3').innerHTML = b
+
+    // join
+    let c = ["apple","banana","kiwi"]
+    document.getElementById('demo4').innerHTML = c.join("*")
+
+    // concat
+    let d = ["apple","banana"]
+    let e = ["orange","kiwi"]
+    let f = ["abc","efg"]
+    let g = d.concat(e,f)
+
+    document.getElementById('demo5').innerHTML = g
+
+    // splice
+    const h = ["apple","banana","kiwi","orange"]
+    document.getElementById('demo6').innerHTML = h
+
+    h.splice(2, 0, "lemon","mango")
+    document.getElementById('demo7').innerHTML = h
+
+    // array to string
+    let i = ["abc","def"]
+    let j =  i.toString()
+    document.getElementById('demo8').innerHTML = j
+    // document.getElementById('demo8').innerHTML = typeof j
+
+    // unshift
+    let l = ["apple","banana"]
+    document.getElementById('demo9').innerHTML = l
+    l.unshift("kiwi")
+    document.getElementById('demo10').innerHTML = l
+
+    // shift
+    let a1 = ["apple","banana","kiwi","orange"]
+    document.getElementById('demo11').innerHTML = a1;
+    a1.shift()
+    document.getElementById('demo12').innerHTML = a1
+
+    // slice
+    let b1 = ["apple","banana","kiwi","orange"]
+    document.getElementById('demo13').innerHTML = b1
+    let c1 = b1.slice(1,3)
+    document.getElementById('demo14').innerHTML = c1
+
+</script>
+</html>
