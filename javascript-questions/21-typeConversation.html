@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversation</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+</body>
+<script>
+
+    // type of All variable
+
+    document.getElementById('demo').innerHTML = 
+    "john is " + typeof "john" + "<br>" +
+    "3.14 is " + typeof 3.14 + "<br>" + 
+    "NaN is " + typeof NaN + "<br>" + 
+    "false is " + typeof false + "<br>" +   
+    "[1,2,3,4] is " + typeof [1,2,3,4] + "<br>" + 
+    "{name : 'aniket',age: 21} is " + typeof {name : 'aniket',age: 21} + "<br>" +  
+    "new Date() is " + typeof new Date() + "<br>" +    
+    "function() {} is " + typeof function() {} + "<br>" +     
+    "myCar is " + typeof myCar + "<br>" +      
+    "null is " + typeof null + "<br>"      
+
+    // constructor of all variabel
+
+    document.getElementById('demo1').innerHTML = 
+    "john".constructor + "<br>" +
+    (3.14).constructor + "<br>" +
+    false.constructor + "<br>" +
+    [1,2,3,4].constructor + "<br>" +
+    {name: 'john',age: 35}.constructor + "<br>" +
+    new Date().constructor + "<br>" +  
+    function () {}.constructor
+
+    // convert number to string
+
+    let x = 123;
+    document.getElementById("demo2").innerHTML =
+    String(x) + "<br>" +
+    String(123) + "<br>" +
+    String(100 + 23);
+
+    // convert number to string using toString
+    let x1 = 123;
+    document.getElementById("demo3").innerHTML =
+    x1.toString() + "<br>" +
+    (123).toString() + "<br>" +
+    (100 + 23).toString();
+
+
+    const fruits = ["Banana", "Orange", "Apple"];
+    document.getElementById("demo4").innerHTML = isArray(fruits);
+
+    function isArray(myArray) {
+        return myArray.constructor.toString().indexOf("") > -1;
+    }
+
+    const myDate = new Date();
+    document.getElementById("demo5").innerHTML = isDate(myDate);
+
+    function isDate(myDate) {
+        return myDate.constructor.toString().indexOf("Date") > -1;
+    } 
+</script>
+</html>
