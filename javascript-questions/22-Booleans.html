@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScripts Boolean</title>
+</head>
+<body>
+    <p>Display the value of Value of Boolean (10 > 9)</p>
+    <p id="demo"></p>
+    <p>Display the value of 10 > 9</p>
+    <p id="demo1"></p>
+    <p>Everything with a real value is true</p>
+    <p id="demo2"></p>
+    <p>Display the Boolean value of 0:</p>
+    <p id="demo3"></p>
+    <p>Display the Boolean value of -0:</p>
+    <p id="demo4"></p>
+    <p>Display the Boolean value of "":</p>
+    <p id="demo5"></p>
+    <p>Display the Boolean value of undefined:</p>
+    <p id="demo6"></p>
+    <p>Display the Boolean value of null:</p>
+    <p id="demo7"></p>
+    <p>Display the Boolean value of false:</p>
+    <p id="demo8"></p>
+    <p>Display the Boolean value of NaN:</p>
+    <p id="demo9"></p>
+</body>
+<script>
+    document.getElementById('demo').innerHTML = Boolean(10 > 9)
+    document.getElementById('demo1').innerHTML = 10 > 9
+
+
+    // every value is true
+    document.getElementById("demo2").innerHTML =
+    "100 is " + Boolean(100) + "<br>" +
+    "3.14 is " + Boolean(3.14) + "<br>" +
+    "-15 is " + Boolean(-15) + "<br>" +
+    "Any (not empty) string is " + Boolean("Hello") + "<br>" +
+    "Even the string 'false' is " + Boolean('false') + "<br>" +
+    "Any expression (except zero) is " + Boolean(1 + 7 + 3.14);
+
+    let x = 0
+    document.getElementById('demo3').innerHTML = Boolean(x)
+
+    let y = -0
+    document.getElementById('demo4').innerHTML = Boolean(y)
+
+    let z = ""
+    document.getElementById('demo5').innerHTML = Boolean(z)
+
+    let a;
+    document.getElementById('demo6').innerHTML = Boolean(a)
+
+    let b = null
+    document.getElementById('demo7').innerHTML = Boolean(b)
+
+    let c = false;
+    document.getElementById('demo8').innerHTML = Boolean(c)
+
+    let d = 10 / "Hello"
+    document.getElementById('demo9').innerHTML = Boolean(d)
+    
+</script>
+</html>
