@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript if else Condition</title>
+</head>
+<body>
+    <p><b>JavaScript if Condition</b></p>
+    <p id="demo"></p>
+    <p><b>JavaScript if... else Condition</b></p>
+    <p id="demo1"></p>
+    <p><b>JavaScript if... else if... Condition</b></p>
+    <p id="demo2"></p>
+    <p><b>JavaScript Math.random()</b></p>
+    <p id="demo3"></p>
+    <p><b>JavaScript switch</b></p>
+    <p id="demo4"></p>
+</body>
+<script>
+    if (new Date().getHours() < 18) {
+        document.getElementById('demo').innerHTML = "Good Day!"
+    }
+
+    let hours = new Date().getHours();
+    let greeting;
+
+    if (hours < 18) {
+        greeting = "Good day";
+    }
+    else{
+        greeting = "Good evening"
+    }
+
+    document.getElementById('demo1').innerHTML = greeting
+
+    let time = new Date().getHours();
+    let greeting1;
+
+    if (time < 10) {
+        greeting1 = "Good Morning"
+    }
+    else if (time < 20) {
+        greeting1 = "Good day"
+    }
+    else{
+        greeting1 = "Good Evening"
+    }
+
+    document.getElementById('demo2').innerHTML = greeting1
+
+    let text;
+    if (Math.random() < 0.5) {
+        text = "<a href='https://aniket123-portfolio.netlify.app/'>Visit My Portfolio</a>"
+    }
+    else{
+        text = "<a href='https://www.google.com/'>Visit Google</a>"
+    }
+
+    document.getElementById('demo3').innerHTML = text
+
+    let day;
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday"; 
+            break;
+        case 1:
+            day = "Monday"; 
+            break;
+        case 2:
+            day = "Tuesday"; 
+            break;
+        case 3:
+            day = "Wednesday"; 
+            break;
+        case 4:
+            day = "Thursday"; 
+            break;
+        case 5:
+            day = "Friday"; 
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+    }
+
+    document.getElementById('demo4').innerHTML = "Today is " + day
+</script>
+
+</html>
