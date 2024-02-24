@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Error Handling</title>
+</head>
+<body>
+    <h1>Tyr and Catch Method</h1>
+    <p id="demo"></p>
+    <h1>JavaScript Error Handling</h1>
+    <input type="button" value="View Message" onclick="message()">
+    <h1>onError Event</h1>
+    <input type="button" value="view Message" onclick="message1()"> 
+</body>
+<script>
+    try {
+        aler("This is a Alert Box")
+    } catch (err) {
+        document.getElementById('demo').innerHTML = err.message
+    }
+
+
+    // Error Handling
+    
+    let txt = ""
+
+    function message() {
+        try {
+            addAlert("This is Error")
+        } catch (err) {
+            txt = "Trror On This Page \n\n"
+            txt += "If You are Click Ok Viewing on This Page\n"
+            txt += "or cancle go to google home page \n\n"
+            if (!confirm(txt)) {
+                document.location.href = "https://www.google.com/"
+            }
+        }
+    }
+
+    // onerror Event
+
+    onerror = handleErr;
+    let txt1 = ""
+
+    function handleErr(msg,url,l) {
+        txt1 = "There was an error on this page\n\n";
+        txt1 += "Error: " + msg + "\n";
+        txt1 += "url: " + url + "\n";
+        txt1 += "line: " + l + "\n";
+        txt1 += "Click ok Continue.\n\n"
+        alert(txt1);
+        return true
+    }
+
+    function message1() {
+        addAlert("Welcome")
+    }
+
+</script>
+</html>
