@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Object</title>
+</head>
+<body>
+    <h1>JavaScript Variable</h1>
+    <p id="demo"></p>   
+    <h1>JavaScript Object</h1>
+    <p id="demo1"></p>
+    <h1>Creatin JavaScript Object Single Line</h1>
+    <p id="demo2"></p>
+    <h1>Creating JavaScript Object Using New keyWord</h1>
+    <p id="demo3"></p>
+    <h1>JavaScript Object Using Constructor</h1>
+    <p id="demo4"></p>
+    <h1>Built in object in javascript</h1>
+    <p id="demo5"></p>
+    <h1>create Variable</h1>
+    <p id="demo6"></p>
+    <h1>JavaScript Object Are Mutable</h1>
+    <p id="demo7"></p>
+</body>
+<script>
+    let a = "John Doe"
+    document.getElementById('demo').innerHTML = a;
+
+    // multiple line
+    let person = {
+        firstName : "John",
+        lastName : "Doe",
+        age : 35,
+    }
+
+    document.getElementById('demo1').innerHTML = person.firstName + " " + person.lastName
+
+    // single line
+    let person1 = {firstName: "John", lastName : "doe" ,age: 35}
+    document.getElementById('demo2').innerHTML = person.firstName + " is " + person.age + " year old"
+
+    // creating using new keyword
+    let person2 = new Object();
+    person2.firstName = "John"
+    person2.lastName = "Doe"
+    person2.age = "35"
+
+    document.getElementById('demo3').innerHTML = person.firstName + " is " + person.age + " year old"
+
+    // Constructor
+
+    function person3(firstName,lastName,age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age
+    }
+
+    let name = new person3("John","Doe",35)
+
+    document.getElementById('demo4').innerHTML = "first Name is " + name.firstName
+
+    // built-in javascript object
+
+    let x1 = new Object();
+    let x2 = new String();
+    let x3 = new Number();
+    let x4 = new Boolean();
+    let x5 = new Array();
+    let x6 = new RegExp();
+    let x7 = new Function();
+    let x8 = new Date();
+    
+    document.getElementById('demo5').innerHTML = 
+    "x1: " + typeof x1 + "<br>" +
+    "x2: " + typeof x2 + "<br>" +
+    "x3: " + typeof x3 + "<br>" +
+    "x4: " + typeof x4 + "<br>" +
+    "x5: " + typeof x5 + "<br>" + 
+    "x6: " + typeof x6 + "<br>" +
+    "x7: " + typeof x7 + "<br>" +
+    "x8: " + typeof x8 + "<br>"
+
+    // create variable
+
+    let y1 = {}
+    let y2 = ""
+    let y3 = []
+    let y4 = 0
+    let y5 = false
+    let y6 = /()/
+    let y7 = function(){};
+
+    document.getElementById('demo6').innerHTML = 
+    "y1: " + typeof y1 + "<br>" +
+    "y2: " + typeof y2 + "<br>" +
+    "y3: " + typeof y3 + "<br>" +
+    "y4: " + typeof y4 + "<br>" +
+    "y5: " + typeof y5 + "<br>" +
+    "y6: " + typeof y6 + "<br>" +
+    "y7: " + typeof y7 + "<br>" 
+
+    // object is Mutable
+
+    let person4 = {
+        firstName : "John",
+        lastName : "Doe",
+        age : 10
+    }
+
+    const x = person4
+    x.age = 35;
+
+    document.getElementById('demo7').innerHTML = person.firstName + " is " + person.age + " years old"
+    
+
+</script>
+</html>
