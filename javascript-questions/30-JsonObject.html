@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Object</title>
+</head>
+<body>
+    <h1>Access a JavaScript Object</h1>
+    <p id="demo"></p>
+    <h1>Access a JavaScript Object[]</h1>
+    <p id="demo1"></p>
+    <h1>Looping object Property</h1>
+    <p id="demo2"></p>
+    <h1>Access Nested JSON Object</h1>
+    <p id="demo3"></p>
+    <h1>Modify value</h1>
+    <p id="demo4"></p>
+    <h1>Modify object values using bracket notation:</h1>
+    <p id="demo5"></p>
+    <h1>Delete JavaScript Object Properties</h1>
+    <p id="demo6"></p>
+</body>
+<script>
+    const myJson = `{"name": "John","age" : 30 , "car" : null}`
+    const myObj = JSON.parse(myJson);
+    document.getElementById('demo').innerHTML = myObj.name + " " + myObj.age
+    
+    const myJson1 = `{"name": "John","age" : 30 , "car" : null}`
+    const myObj1 = JSON.parse(myJson1);
+    document.getElementById('demo1').innerHTML = myObj1["name"] 
+    
+    const myJson2 = '{"name" : "aniket", "age" : 21, "car" : null}'
+    const myObj2 = JSON.parse(myJson2)
+
+    // Looping throw access 
+
+    let txt = ""
+    for(let x in myObj2){
+        txt += x + ": " + myObj2[x] + ", "
+    }
+
+    document.getElementById('demo2').innerHTML = txt
+
+    // Nested json Object 
+
+    const myObj3 = {
+        "name" : "Aniket",
+        "age" : 21,
+        "cars" : {
+            "car1" : "BMW",
+            "car2" : "Audi",
+            "car3" : "Ford"
+        }
+    }
+
+    document.getElementById('demo3').innerHTML = myObj3.cars.car2
+
+    // change value
+
+    const myObj4 = {
+        "name" : "Aniket",
+        "age" : 21,
+        "cars" : {
+            "car1" : "BMW",
+            "car2" : "Audi",
+            "car3" : "Ford"
+        }
+    }
+
+    myObj4.cars.car3 = "Mercedes"
+
+    let txt1 = ""
+
+    for(let x in myObj4.cars){
+        txt1 += myObj4.cars[x] + "<br>"
+    }
+
+    document.getElementById('demo4').innerHTML = txt1
+
+    const myObj5 = {
+        "name" : "Aniket",
+        "age" : 21,
+        "cars" : {
+            "car1" : "BMW",
+            "car2" : "Audi",
+            "car3" : "Ford"
+        }
+    }
+
+    myObj5.cars["car3"] = "Mercedes"
+
+    let txt2 = ""
+    for(let x in myObj5.cars){
+        txt2 += myObj5.cars[x] + "<br>"
+    }
+
+    document.getElementById('demo5').innerHTML = txt2
+
+    const myObj6 = {
+        "name": "Aniket",
+        "age" : 21,
+        "cars" : {
+            "car1" : "BMW",
+            "car2" : "Audi",
+            "car3" : "Ford"
+        }
+    }
+
+    delete myObj6.cars.car3;
+
+    let txt3 = ""
+    for(let x in myObj6.cars){
+        txt3 += myObj6.cars[x] + "<br>"
+    }
+
+    document.getElementById('demo6').innerHTML = txt3
+
+    
+</script>
+</html>
