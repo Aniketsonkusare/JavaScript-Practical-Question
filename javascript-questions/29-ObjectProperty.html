@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Property in JavaScript</title>
+</head>
+<body>
+    <h1>Access Property with .property</h1>
+    <p id="demo"></p>
+    <h1>Access property with ["property"]</h1>
+    <p id="demo1"></p>
+    <h1>Looping Object Property Value</h1>
+    <p id="demo2"></p>
+    <h1>Add New Property to an existing Object</h1>
+    <p id="demo3"></p>
+    <h1>Deleting Object Property</h1>
+    <p id="demo4"></p>
+
+</body>
+<script>
+    const person = {
+        firstname : "John",
+        lastName : "Doe",
+        age : 35
+    }
+
+    document.getElementById('demo').innerHTML = person.firstname + " is " + person.age + " Year old"
+
+    const person2 = {
+        firstname : "John",
+        lastName : "Doe",
+        age : 35
+    }
+
+    document.getElementById('demo1').innerHTML = person2["firstname"] + " is " + person["age"] + " Year old"
+
+    const person3 = {
+        firstname : "John",
+        lastName : "Doe",
+        age : 35
+    }
+
+    let txt = ""
+    for(let x in  person3){
+        txt += person3[x] + " "
+    }
+    
+    document.getElementById('demo2').innerHTML = txt
+
+    const person4 = {
+        firstname : "John",
+        lastName : "Doe",
+        age : 35
+    }
+
+    person4.nationality = "USA"
+    document.getElementById('demo3').innerHTML = 
+    person4.firstname + " Nationality is " + person4.nationality
+
+    const person5 = {
+        firstname : "John",
+        lastName : "Doe",
+        age : 35
+    }
+
+    delete person5.age;
+
+    document.getElementById('demo4').innerHTML =
+    person5.firstname + " is " + person5.age + " Year old "
+
+</script>
+</html>
