@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Array</title>
+</head>
+<body>
+    <h1>Access Array Values</h1>
+    <p id="demo"></p>
+    <h1>Looping an Array(for in Loop)</h1>
+    <p id="demo1"></p>
+    <h1>Looping an Array(for Loop)</h1>
+    <p id="demo2"></p>
+    <h1>Looping through arrays inside arrays.</h1>
+    <p id="demo3"></p>
+    <h1>Modify an array value of an object.</h1>
+    <p id="demo4"></p>
+    <h1>Delete array properties:</h1>
+    <p id="demo5"></p>
+</body>
+<script>
+    const myJson = '{"name":"Aniket", "age" :21,"cars":["BMW","Audi","Ford"]}'
+    const myObj = JSON.parse(myJson)
+    
+    document.getElementById('demo').innerHTML = myObj.cars[0]
+    
+    const myJson1 = '{"name":"Aniket", "age" :21,"cars":["BMW","Audi","Ford"]}'
+    const myObj1 = JSON.parse(myJson1)
+    
+    let txt = ""
+    for(let x in myObj1.cars){
+        txt += myObj1.cars[x] + "<br>"
+    }
+    
+    document.getElementById('demo1').innerHTML = txt
+    
+    const myJson2 = '{"name": "Aniket","age":21,"cars":["BMW","Audi","Ford"]}'
+    const myObj2 = JSON.parse(myJson2);
+
+    let txt1 = ""
+
+    for(let i = 0; i <myObj2.cars.length; i++){
+        txt1 += myObj2.cars[i] + "<br>"
+    }
+
+    document.getElementById('demo2').innerHTML = txt1
+
+    const myJson3 = {
+        "name" : "Aniket",
+        "age" : 21,
+        "cars" : [
+            {"name":"Ford", "models":["Fiesta", "Focus", "Mustang"]},
+            {"name":"BMW", "models":["320", "X3", "X5"]},
+            {"name":"Fiat", "models":["500", "Panda"]}
+        ]
+    }
+
+    let txt2 = ""
+
+    for(let i in myJson3.cars){
+        txt2 += "<h2>" + myJson3.cars[i].name + "</h2>" 
+        for(let j in myJson3.cars[i].models){
+            txt2 += myJson3.cars[i].models[j] + "<br>"
+        }
+    }
+
+    document.getElementById('demo3').innerHTML = txt2
+
+
+    
+    const myJson4 = {
+        "name" : "Aniket",
+        "age" : 21,
+        "cars" : ["BMW","Audi","Ford"]
+    }    
+
+    myJson4.cars[2] = "Mercedes"
+
+    let txt3 = ""
+    for(let i in myJson4.cars){
+        txt3 += myJson4.cars[i] + "<br>"
+    }
+
+    document.getElementById('demo4').innerHTML = txt3
+
+    const myJson5 = {
+        "name" : "Aniket",
+        "age" : 21,
+        "cars" : ["BMW","Audi","Ford"]
+    }    
+
+    delete myJson5.cars[2]
+    
+    let txt4 = ""
+    for(let i in myJson5.cars){
+        txt4 += myJson5.cars[i] + "<br>"
+    }
+
+    document.getElementById('demo5').innerHTML = txt4
+</script>
+</html>
