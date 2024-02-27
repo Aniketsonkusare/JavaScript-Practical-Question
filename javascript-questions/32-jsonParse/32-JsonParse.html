@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json Parse</title>
+</head>
+<body>
+    <h2>Creating an Object from a JSON String</h2>
+    <p id="demo"></p>
+    <h2>Fetch a JSON file with XMLHttpRequest</h2>
+    <p id="demo1"></p>
+    <h2>Content written as an JSON array will be converted into a JavaScript array</h2>
+    <p id="demo2"></p>
+    <h2>Convert a string into a date object.</h2>
+    <p id="demo3"></p>
+    <h2>Convert a string into a date object.</h2>
+    <p id="demo4"></p>
+    <h2>Convert a string into a function.</h2>
+    <p id="demo5"></p>
+</body>
+<script>
+    const txt = '{"name":"John","age":35,"city":"New York"}'
+    const obj = JSON.parse(txt)
+    document.getElementById('demo').innerHTML = obj.name + " is " + obj.age + " year old"
+
+    
+    const xmlHttp = new XMLHttpRequest();
+    xmlHttp.onload = function () {
+        let myobj = JSON.parse(this.responseText);
+        document.getElementById('demo1').innerHTML = myobj.name + " is " + myobj.age + " Year old"
+    }
+
+    xmlHttp.open("GET","json_demo.json");
+    xmlHttp.send();
+
+    // array throw access 
+
+    const xmlHttp1 = new XMLHttpRequest();
+    xmlHttp1.onload = function () {
+        let myobj1 = JSON.parse(this.responseText);
+        document.getElementById('demo2').innerHTML = myobj1[0]+" "+myobj1[1]+" "+myobj1[2] 
+    }
+
+    xmlHttp1.open('GET',"json1_demo.json",true);
+    xmlHttp1.send()
+
+    // convert a string into date object
+
+    const text = '{"name" : "Harsh","birth": "2005-06-10","Country" : "India"}'
+    const myobj2 = JSON.parse(text);
+    myobj2.birth = new Date(myobj2.birth)
+    document.getElementById('demo3').innerHTML = myobj2.name + " " + myobj2.birth
+    
+    const text1 = '{"name" : "Aniket","birth": "2002-03-02","Country" : "India"}'
+    const myobj3 = JSON.parse(text1,function (key,value) {
+        if (key == "birth") {
+            return new Date(value)
+        }
+        else{
+            return value
+        }
+    })
+    document.getElementById('demo4').innerHTML = myobj3.name + " " + myobj3.birth
+
+    const text2 = '{"name":"john","age": "function() {return 32;}" ,"city":"New York"}'
+    const myobj4 = JSON.parse(text2)
+    myobj4.age = eval("(" + myobj4.age + ")")
+    document.getElementById('demo5').innerHTML = myobj4.name + " " + myobj4.age()
+
+
+</script>
+</html>
